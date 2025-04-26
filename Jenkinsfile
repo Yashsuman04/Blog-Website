@@ -16,17 +16,17 @@ pipeline {
 
         stage('Install Node.js Dependencies') {
             steps {
-                dir('blogWebsite-main') {
+            
                     bat 'npm install'
-                }
+                
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                dir('blogWebsite-main') {
+                
                     bat "docker build -t %IMAGE_NAME%:%IMAGE_TAG% ."
-                }
+            
             }
         }
 
